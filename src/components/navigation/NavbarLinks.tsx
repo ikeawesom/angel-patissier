@@ -1,6 +1,6 @@
+import { NAV_LINKS, NavLinksType } from "@/src/constants";
 import Link from "next/link";
 import React from "react";
-import { NAV_LINKS, NavLinksType } from "./Navbar";
 import { twMerge } from "tailwind-merge";
 
 export default function NavbarLinks({ className }: { className?: string }) {

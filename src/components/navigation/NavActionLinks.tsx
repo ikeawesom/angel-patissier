@@ -1,6 +1,9 @@
 import React from "react";
-import { NAV_ACTION_LINKS, NavLinksType } from "./Navbar";
-import { DEFAULT_ICON_SIZE } from "@/src/constants";
+import {
+  DEFAULT_ICON_SIZE,
+  NAV_ACTION_LINKS,
+  NavLinksType,
+} from "@/src/constants";
 import Link from "next/link";
 import Image from "next/image";
 import { twMerge } from "tailwind-merge";
