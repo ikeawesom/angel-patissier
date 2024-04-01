@@ -9,6 +9,11 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      colors: {
+        primary: "#FF88B3",
+        background: "#F7FBFF",
+        "light-text": "rgb(156 163 175)",
+      },
     },
   },
   plugins: [],
