@@ -1,3 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter+Tight&family=Playfair+Display&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+button,
+.navbar-links {
+  font-weight: bold;
+  font-family: "Playfair Display", serif;
+}
+
+a {
+  transition: 150ms;
+}
+
+a:not(.custom):hover {
+  transform: translateY(-2px);
+}
+
+p {
+  font-family: "Inter Tight", sans-serif;
+}
+
+@media (min-width: 1000px) {
+  .nav-logo {
+    @apply absolute custom left-1/2 -translate-x-1/2 top-4;
+  }
+}
+
+.nav-logo {
+  justify-self: self-start;
+}
+
+.background-hero {
+  background-image: linear-gradient(
+      to bottom left,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url("/images/background-hero.jpg");
+  background-position: center center;
+  background-size: cover;
+}
