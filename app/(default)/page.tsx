@@ -15,7 +15,9 @@ export default async function Home() {
           {/* <FAQSection/> */}
         </Wrapper>
       </div>
-
+      <Wrapper parentClassName="bg-secondary" className="max-w-[100%]">
+        <NewsletterSection />
+      </Wrapper>
       {/* <Footer/> */}
     </>
   );
