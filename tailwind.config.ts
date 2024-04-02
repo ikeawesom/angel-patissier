@@ -11,6 +11,7 @@ const config: Config = {
       },
       colors: {
         primary: "#FF88B3",
+        secondary: "#FFDBEB",
         background: "#F7FBFF",
         "light-text": "rgb(156 163 175)",
       },
