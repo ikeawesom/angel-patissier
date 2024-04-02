@@ -9,7 +9,24 @@ import MobileNavMenu from "./MobileNavMenu";
 import { twMerge } from "tailwind-merge";
 
 export default function Navbar() {
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState({
+    status: false,
+    animating: false,
+  });
+
+  const openMenu = () => {
+    setShow({ ...show, animating: true });
+    setTimeout(() => {
+      setShow({ status: !show.status, animating: false });
+    }, 100);
+  };
+
+  const closeMenu = () => {
+    setShow({ status: false, animating: true });
+    setTimeout(() => {
+      setShow({ animating: false, status: false });
+    }, 300);
+  };
 
   return (
     <>
@@ -17,9 +34,9 @@ export default function Navbar() {
         <div className="w-full relative flex items-center justify-between py-4 px-5">
           <div className="flex items-center justify-start gap-4 min-[1000px]:hidden">
             <Image
-              onClick={() => setShow(!show)}
+              onClick={() => (!show.status ? openMenu() : closeMenu())}
               alt="Menu"
-              src={show ? "/icons/cross.svg" : "/icons/hamburger.svg"}
+              src={show.status ? "/icons/cross.svg" : "/icons/hamburger.svg"}
               width={DEFAULT_ICON_SIZE}
               height={DEFAULT_ICON_SIZE}
             />
@@ -30,12 +47,14 @@ export default function Navbar() {
           <NavActionLinks />
         </div>
       </nav>
-      <MobileNavMenu
-        className={twMerge(
-          "z-10 fixed duration-300 h-full top-[62px] left-0",
-          show ? "opacity-100" : "opacity-0"
-        )}
-      />
+      {(show.animating || show.status) && (
+        <MobileNavMenu
+          className={twMerge(
+            "z-10 fixed duration-300 h-full top-[62px] left-0",
+            show.status ? "opacity-100" : "opacity-0"
+          )}
+        />
+      )}
     </>
   );
 }
