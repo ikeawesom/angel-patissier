@@ -1,13 +1,8 @@
+import { UtilityType } from "@/src/constants";
 import React from "react";
 import { twMerge } from "tailwind-merge";
 
-export default function DefaultCard({
-  children,
-  className,
-}: {
-  children?: React.ReactNode;
-  className?: string;
-}) {
+export default function DefaultCard({ children, className }: UtilityType) {
   return (
     <div
       className={twMerge(

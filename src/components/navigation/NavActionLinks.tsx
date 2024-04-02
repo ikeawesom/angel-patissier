@@ -3,12 +3,13 @@ import {
   DEFAULT_ICON_SIZE,
   NAV_ACTION_LINKS,
   NavLinksType,
+  UtilityType,
 } from "@/src/constants";
 import Link from "next/link";
 import Image from "next/image";
 import { twMerge } from "tailwind-merge";
 
-export default function NavActionLinks({ className }: { className?: string }) {
+export default function NavActionLinks({ className }: UtilityType) {
   return (
     <div
       className={twMerge("flex items-center justify-center gap-4", className)}

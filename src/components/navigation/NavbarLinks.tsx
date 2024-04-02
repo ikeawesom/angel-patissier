@@ -1,9 +1,9 @@
-import { NAV_LINKS, NavLinksType } from "@/src/constants";
+import { NAV_LINKS, NavLinksType, UtilityType } from "@/src/constants";
 import Link from "next/link";
 import React from "react";
 import { twMerge } from "tailwind-merge";
 
-export default function NavbarLinks({ className }: { className?: string }) {
+export default function NavbarLinks({ className }: UtilityType) {
   return (
     <div
       className={twMerge("flex items-center justify-between gap-8", className)}

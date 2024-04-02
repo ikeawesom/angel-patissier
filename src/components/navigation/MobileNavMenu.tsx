@@ -3,8 +3,9 @@ import { twMerge } from "tailwind-merge";
 import NavbarLinks from "./NavbarLinks";
 import PrimaryButton from "../utils/PrimaryButton";
 import Link from "next/link";
+import { UtilityType } from "@/src/constants";
 
-export default function MobileNavMenu({ className }: { className?: string }) {
+export default function MobileNavMenu({ className }: UtilityType) {
   return (
     <div
       className={twMerge(
