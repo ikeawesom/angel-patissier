@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <div className="background-hero h-[90vh] w-screen p-10 grid place-items-center">
+    <div className="background-hero h-[90vh] w-full p-10 grid place-items-center">
       <div className="flex flex-col items-center justify-center gap-6 max-w-[800px] w-full text-center">
         <h1 className="xs:text-6xl text-4xl font-bold text-slate-50">
           We love delicious homemade pastry, and so will you.
