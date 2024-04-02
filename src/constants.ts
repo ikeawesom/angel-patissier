@@ -1,5 +1,11 @@
 export const DEFAULT_ICON_SIZE = 30;
 
+export type UtilityType = {
+  className?: string;
+  children?: React.ReactNode;
+  parentClassName?: string;
+};
+
 export type NavLinksType = {
   title: string;
   link: string;
