@@ -4,6 +4,7 @@ export type UtilityType = {
   className?: string;
   children?: React.ReactNode;
   parentClassName?: string;
+  dark?: boolean;
 };
 
 export type NavLinksType = {
