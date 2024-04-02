@@ -7,9 +7,8 @@ export type NavLinksType = {
 };
 
 export const NAV_LINKS = [
-  { title: "Home", link: "/" },
+  { title: "Shop", link: "/shop" },
   { title: "About Us", link: "/about" },
-  { title: "Products", link: "/products" },
   { title: "Blog", link: "/blog" },
   { title: "Contact Us", link: "/contact" },
 ] as NavLinksType[];
