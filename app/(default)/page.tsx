@@ -1,6 +1,6 @@
 import NewsletterSection from "@/src/components/sections/newsletter/NewsletterSection";
 import WhyUsSection from "@/src/components/sections/whyUs/WhyUsSection";
-import Hero from "@/src/components/utils/Hero";
+import Hero from "@/src/components/sections/Hero";
 import Wrapper from "@/src/components/utils/Wrapper";
 
 export default async function Home() {
