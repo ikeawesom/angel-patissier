@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Angel's Patisserie",
-  description: "Homemade bakery at your doorstep.",
+  title: "Account",
 };
 
 export default function RootLayout({
@@ -10,10 +9,5 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <>
-      <h1>Admin Page</h1>
-      {children}
-    </>
-  );
+  return <>{children}</>;
 }

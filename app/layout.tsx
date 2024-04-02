@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Angel's Patisserie",
+  title: {
+    template: "%s | Angel's Patisserie",
+    default: "Angel's Patisserie",
+  },
   description: "Homemade bakery at your doorstep.",
 };
 
