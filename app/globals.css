@@ -26,7 +26,12 @@ a:not(.custom):hover {
   transform: translateY(-2px);
 }
 
+input:not(.custom) {
+  @apply p-4 w-full shadow-sm;
+}
+
 p,
+label,
 input:not(.custom) {
   font-family: "Inter Tight", sans-serif;
 }
@@ -60,5 +65,16 @@ input:not(.custom) {
     ),
     url("/images/cookies.jpg");
   background-position: center 60%;
+  background-size: cover;
+}
+
+.background-auth {
+  background-image: linear-gradient(
+      to bottom left,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url("/images/background-hero.jpg");
+  background-position: center center;
   background-size: cover;
 }

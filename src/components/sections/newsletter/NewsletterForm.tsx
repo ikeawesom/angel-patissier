@@ -8,7 +8,6 @@ export default function NewsletterForm() {
     <form className="flex flex-col items-start justify-start gap-6 w-full">
       <input
         value={email}
-        className="p-4 w-full"
         placeholder="Enter your email here"
         onChange={(e: ChangeEvent<HTMLInputElement>) =>
           setEmail(e.target.value)
