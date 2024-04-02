@@ -3,12 +3,9 @@ import Image from "next/image";
 import React from "react";
 import { twMerge } from "tailwind-merge";
 
-export default function WhyUsCard({
-  desc,
-  src,
-  title,
-  className,
-}: WhyUsCardType) {
+export default function WhyUsCard(config: WhyUsCardType) {
+  const { desc, src, title, className } = config;
+
   return (
     <div
       className={twMerge(
@@ -17,6 +14,7 @@ export default function WhyUsCard({
       )}
     >
       <Image
+        className="duration-150 hover:scale-125"
         src={src}
         alt="title"
         width={DEFAULT_ICON_SIZE * 1.7}

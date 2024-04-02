@@ -5,7 +5,7 @@ import { twMerge } from "tailwind-merge";
 
 export default function NavLogo({ className }: { className?: string }) {
   return (
-    <Link href="/" className={twMerge("nav-logo", className)}>
+    <Link href="/" className={twMerge("custom nav-logo", className)}>
       <Logo />
     </Link>
   );
