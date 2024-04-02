@@ -15,7 +15,7 @@ export const NAV_LINKS = [
 
 export const NAV_ACTION_LINKS = [
   { title: "Cart", link: "/cart", icon: "cart.svg" },
-  { title: "Account", link: "/auth", icon: "user.svg" },
+  { title: "Account", link: "/auth/login", icon: "user.svg" },
 ] as NavLinksType[];
 
 export type WhyUsCardType = {
