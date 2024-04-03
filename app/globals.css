@@ -31,6 +31,7 @@ input:not(.custom) {
 }
 
 p,
+a,
 label,
 input:not(.custom) {
   font-family: "Inter Tight", sans-serif;
