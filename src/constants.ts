@@ -1,10 +1,12 @@
 export const DEFAULT_ICON_SIZE = 30;
 
 export type AuthMemberType = {
-  first_name?: string;
-  last_name?: string;
   email: string;
   password: string;
+  uuid?: string;
+  role?: string;
+  first_name?: string;
+  last_name?: string;
 };
 
 export type UtilityType = {
