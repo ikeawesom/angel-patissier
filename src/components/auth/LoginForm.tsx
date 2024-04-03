@@ -1,15 +1,21 @@
 "use client";
-import React, { useState } from "react";
+import React, { FormEvent, useState } from "react";
 import FormInputContainer from "../utils/FormInputContainer";
 import Link from "next/link";
 import RightPrimaryButton from "../utils/RightPrimaryButton";
 import { handleLoginForm } from "./handleAuth";
+import { toast } from "sonner";
+import { useRouter } from "next/navigation";
+import { AuthMemberType } from "@/src/constants";
 
 export default function LoginForm() {
+  const router = useRouter();
   const [details, setDetails] = useState({
     email: "",
     password: "",
   });
+
+  const [loading, setLoading] = useState(false);
 
   const ready = details.email !== "" && details.password !== "";
 
@@ -17,9 +23,26 @@ export default function LoginForm() {
     setDetails({ ...details, [e.target.name]: e.target.value });
   };
 
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    const loginDetails = {
+      email: details.email,
+      password: details.password,
+    } as AuthMemberType;
+
+    try {
+      const res = await handleLoginForm(loginDetails);
+      if (!res.status) throw new Error(res.error);
+    } catch (err: any) {
+      toast.error(err.message);
+    }
+    setLoading(false);
+  };
+
   return (
     <form
-      action={handleLoginForm}
+      onSubmit={handleSubmit}
       className="flex flex-col items-start justify-start w-full gap-4"
     >
       <FormInputContainer id="email" text="Email Address">
@@ -47,8 +70,13 @@ export default function LoginForm() {
       >
         Forgot Password
       </Link>
-      <RightPrimaryButton className="mt-2" disabled={!ready}>
-        Sign In
+      <RightPrimaryButton
+        className="mt-2"
+        type="submit"
+        disabled={!ready || loading}
+        loading={loading}
+      >
+        {loading ? "Signing In" : "Sign In"}
       </RightPrimaryButton>
       <p className="text-sm text-light-text">
         New here?{" "}
