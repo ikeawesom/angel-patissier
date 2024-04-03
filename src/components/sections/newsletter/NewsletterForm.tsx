@@ -1,6 +1,6 @@
 "use client";
 import React, { ChangeEvent, useState } from "react";
-import SecondaryButton from "../../utils/SecondaryButton";
+import RightSecondaryButton from "../../utils/RightSecondaryButton";
 
 export default function NewsletterForm() {
   const [email, setEmail] = useState("");
@@ -13,9 +13,9 @@ export default function NewsletterForm() {
           setEmail(e.target.value)
         }
       />
-      <SecondaryButton className="max-[400px]:w-full w-fit hover:translate-x-1">
+      <RightSecondaryButton className="max-[400px]:w-full w-fit">
         Sign Up
-      </SecondaryButton>
+      </RightSecondaryButton>
     </form>
   );
 }
