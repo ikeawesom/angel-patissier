@@ -1,5 +1,12 @@
 export const DEFAULT_ICON_SIZE = 30;
 
+export type AuthMemberType = {
+  first_name?: string;
+  last_name?: string;
+  email: string;
+  password: string;
+};
+
 export type UtilityType = {
   className?: string;
   children?: React.ReactNode;
