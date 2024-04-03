@@ -10,6 +10,7 @@ export default function RightPrimaryButton({
   disabled,
   onClick,
   type,
+  loading,
 }: ButtonType) {
   return (
     <PrimaryButton
@@ -28,16 +29,26 @@ export default function RightPrimaryButton({
       >
         {children}
       </span>
-      <Image
-        src="/icons/right.svg"
-        alt="Sign In"
-        className={twMerge(
-          "translate-y-[2px] duration-150",
-          !disabled && "group-hover:translate-x-[2px]"
-        )}
-        width={DEFAULT_ICON_SIZE}
-        height={DEFAULT_ICON_SIZE}
-      />
+      {loading ? (
+        <Image
+          src="/icons/spinner-bright.svg"
+          alt="Loading"
+          className="animate-spin ease-in-out ml-2"
+          width={DEFAULT_ICON_SIZE * 0.8}
+          height={DEFAULT_ICON_SIZE * 0.8}
+        />
+      ) : (
+        <Image
+          src="/icons/right.svg"
+          alt="Sign In"
+          className={twMerge(
+            "translate-y-[1.5px] duration-150",
+            !disabled && "group-hover:translate-x-[2px]"
+          )}
+          width={DEFAULT_ICON_SIZE * 0.8}
+          height={DEFAULT_ICON_SIZE * 0.8}
+        />
+      )}
     </PrimaryButton>
   );
 }
