@@ -9,7 +9,7 @@ export default function Back({ children, dark }: UtilityType) {
   return (
     <p
       onClick={() => router.back()}
-      className="text-slate-50 absolute top-10 left-10 duration-150 cursor-pointer hover:-translate-x-1 hover:text-primary"
+      className="text-slate-50 duration-150 cursor-pointer hover:-translate-x-1 hover:text-primary"
     >
       <span className="flex items-center justify-center">
         <Image

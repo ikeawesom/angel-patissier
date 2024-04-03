@@ -7,21 +7,34 @@ import { twMerge } from "tailwind-merge";
 export default function RightPrimaryButton({
   children,
   className,
+  disabled,
+  onClick,
+  type,
 }: ButtonType) {
   return (
     <PrimaryButton
+      onClick={onClick}
+      disabled={disabled}
+      type={type ? type : "button"}
       className={twMerge(
         "mt-4 flex items-center justify-center group",
         className
       )}
     >
-      <span className="group-hover:-translate-x-[2px] duration-150">
+      <span
+        className={twMerge(
+          !disabled && "group-hover:-translate-x-[2px] duration-150"
+        )}
+      >
         {children}
       </span>
       <Image
         src="/icons/right.svg"
         alt="Sign In"
-        className="translate-y-[2px] group-hover:translate-x-[2px] duration-150"
+        className={twMerge(
+          "translate-y-[2px] duration-150",
+          !disabled && "group-hover:translate-x-[2px]"
+        )}
         width={DEFAULT_ICON_SIZE}
         height={DEFAULT_ICON_SIZE}
       />
