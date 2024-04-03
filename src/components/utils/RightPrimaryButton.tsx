@@ -17,10 +17,7 @@ export default function RightPrimaryButton({
       onClick={onClick}
       disabled={disabled}
       type={type ? type : "button"}
-      className={twMerge(
-        "mt-4 flex items-center justify-center group",
-        className
-      )}
+      className={twMerge("flex items-center justify-center group", className)}
     >
       <span
         className={twMerge(
