@@ -7,6 +7,7 @@ import NavbarLinks from "./NavbarLinks";
 import NavLogo from "./NavLogo";
 import MobileNavMenu from "./MobileNavMenu";
 import { twMerge } from "tailwind-merge";
+import NavComponent from "./NavComponent";
 
 export default function Navbar() {
   const [show, setShow] = useState({
@@ -30,23 +31,21 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="z-20 w-full bg-background sticky top-0 left-0 shadow-sm">
-        <div className="w-full relative flex items-center justify-between py-4 px-5">
-          <div className="flex items-center justify-start gap-4 min-[1000px]:hidden">
-            <Image
-              onClick={() => (!show.status ? openMenu() : closeMenu())}
-              alt="Menu"
-              src={show.status ? "/icons/cross.svg" : "/icons/hamburger.svg"}
-              width={DEFAULT_ICON_SIZE}
-              height={DEFAULT_ICON_SIZE}
-            />
-            <NavLogo />
-          </div>
-          <NavbarLinks className="max-[1000px]:hidden" />
-          <NavLogo className="max-[1000px]:hidden" />
-          <NavActionLinks />
+      <NavComponent>
+        <div className="flex items-center justify-start gap-4 min-[1000px]:hidden">
+          <Image
+            onClick={() => (!show.status ? openMenu() : closeMenu())}
+            alt="Menu"
+            src={show.status ? "/icons/cross.svg" : "/icons/hamburger.svg"}
+            width={DEFAULT_ICON_SIZE}
+            height={DEFAULT_ICON_SIZE}
+          />
+          <NavLogo />
         </div>
-      </nav>
+        <NavbarLinks className="max-[1000px]:hidden" />
+        <NavLogo className="max-[1000px]:hidden" />
+        <NavActionLinks />
+      </NavComponent>
       {(show.animating || show.status) && (
         <MobileNavMenu
           className={twMerge(
