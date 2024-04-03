@@ -6,9 +6,11 @@ export default function AuthLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="h-svh background-auth p-10 w-full grid place-items-center relative">
-      <Back dark>Return Back</Back>
-      {children}
+    <div className="min-h-svh background-auth p-10 flex flex-col items-start justify-start gap-10">
+      <Back dark>Go Back</Back>
+      <div className="w-full grid place-items-center gap-10 h-full">
+        {children}
+      </div>
     </div>
   );
 }
